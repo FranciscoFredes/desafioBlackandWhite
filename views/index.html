@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <form action="">Ingresa el link de la imagen que deseas modificar</form>
-    <label for="">Url imagen : </label>
-    <input type="text">
-    <button>Subir imagen al servidor</button>    
+    <div class="container">
+        <form action="/submit" method="post" class="form">
+            <h1>Formulario</h1>
+            <label for="url">URL de la imagen:</label>
+            <input type="text" id="url" name="url" placeholder="Ingrese la URL de la imagen" required>
+            <button type="submit">Procesar Imagen</button>
+        </form>
+    </div>
 </body>
 </html>
