@@ -33,13 +33,13 @@ app.post('/submit', async (req, res) => {
     imagen.greyscale()
           .resize(350, 350)
           //directorio para guardar imagen
-          .write(path.join(__dirname, 'images', `${imagenId}.jpg`), (err) => {
+          .write(path.join(__dirname, 'assets', 'images',  `${imagenId}.jpg`), (err) => {
             if (err) {
               console.error('Error al escribir la imagen:', err);
               return res.status(500).send('Error al procesar la imagen');
             }
             console.log('Imagen procesada y guardada como:', `${imagenId}.jpg`);
-            res.send('Imagen procesada y guardada');
+            res.sendFile(path.join(__dirname, 'assets', 'images', `${imagenId}.jpg`));
           });
   });
   console.log('URL:', url);
